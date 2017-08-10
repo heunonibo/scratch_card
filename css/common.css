@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/* Common */
+html {height:100%}
+body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td,
+form, fieldset, legend, input, textarea, button, select {margin:0; padding:0; box-sizing:border-box;}
+body, input, textarea, select, button, table{font-size:14px; line-height:1.25em;}
+body {position:relative; height:100%; font-family:"Nanum Gothic", "HelveticaNeue","HiraKakuProN-W3", sans-serif; color:#fff; -webkit-text-size-adjust:none;}
+img, fieldset {display:block; border:none; width:100%; vertical-align:middle;}
+ul, ol, li {list-style:none;}
+em, address {font-style:normal; word-break:break-all;}
+a {color:#fff; text-decoration:none;}
+a:visited, a:active, a:focus, a:hover {text-decoration:none;}
+table {border-collapse:collapse;}
+input, button, select, textarea {outline:none;}
+button {display:block; width:100%; border:0; cursor:pointer; background:transparent;}
+textarea {resize:none;}
+
+/* HTML5 */
+article, aside, details, figcaption, figure, footer, header, nav, section {display:block;}
+
+.clear {content:''; display:block; clear:both;}
+
+/* Main CSS */
+#wrap {width:100%;}
+.sub_title {position:relative;}
+.sub_title .btn_sider_search {display:block; position:absolute; top:66.2%; left:50%; width:57.2%; margin-left:-28.6%;}
+.scratch_state {position:relative;}
+.scratch_state_list {position:absolute; top:23.4%; left:0; width:100%;}
+.scratch_state_list li {float:left; width:9.7%; margin-left:5.1%;}
+.scratch_state_list li:first-child {margin-left:15.3%;}
+.scratch_card_wrap {position:relative;}
+.scratch_state_strong_on {display:none; position:absolute; top:0; left:0;}
+.btn_scratch_card {display:block; position:absolute; top:70.7%; left:50%; width:57.2%; margin-left:-28.6%;}
+.giveaway {position:relative;}
+.giveaway .btn_chilsung_go {display:block; position:absolute; bottom:4.9%; left:50%; width:57.2%; margin-left:-28.6%;}
+
+/* Popup CSS */
+#mask {position:fixed; z-index:2; opacity:0.7; background-color:#000; display:none; left:0; top:0; width:100%; height:100%;}
+.popup {z-index:3; box-shadow:7px 7px 8px #3c3c3c;}
+.pop_cont {position:absolute; top:0; left:0; width:100%;}
+.win_pop {z-index:3; position:fixed; width:72%; left:50%; top:10%; margin-left:-36%; padding-bottom:53px; background-color:#fff; background-size:100%;}
+.vr_pop {z-index:3; position:fixed; width:72%; left:50%; top:10%; margin-left:-36%;}
+.win_pop .btn_pop_box {width:59.1%; margin:0 auto;}
+.win_pop .btn_pop_box a {display:block;}
+.win_pop .btn_pop_box a:first-child {margin-bottom:3%;}
+.popup .btn_pop_close {z-index:4; position:absolute; top:2.5%; right:3.7%; width:5.4%;}
+.vr_pop .btn_pop_box {width:62.3%; margin:0 auto;}
+.btn_pop_box a:first-child {display:block; margin-bottom:4%;}
+
+#pop_setting .setting_list {width:83.7%; margin:0 auto; background-color:#fff; margin-top:-4%;}
+/* 0727 수정 */
+#pop_setting .setting_list li {position:relative; width:100%; padding:8.5% 0; background:url('../img/popup/bg_setting_line.gif') no-repeat center bottom; background-size:100%;}
+#pop_setting .setting_list li:last-child {background-image:none;}
+/* //0727 수정 */
+#pop_setting .setting_list li:after {content:''; clear:both; display:block;}
+#pop_setting .setting_list p {float:left; width:69.2%; margin-left:6.9%; margin-right:1.6%;}
+/* 0727 수정 */
+#pop_setting .setting_list .btn_setting_more {display:block; width:22.1%; margin:2.5% 0 0 8.3%;}
+/* //0727 수정 */
+#pop_setting input[type="checkbox"] {display:none;}
+#pop_setting label {float:left;}
+#pop_setting .contents_checkbox {position:absolute; left:-9999px; width:0; height:0;}
+#pop_setting input[type="checkbox"] + label:after {content:''; display:inline-block; width:74px; height:45px; background:url('../img/popup/popup_setting_chk.png') right bottom no-repeat;
+background-size:100%;}
+#pop_setting input[type="checkbox"]:checked + label:after {background-position:right 0;}
+#pop_setting .setting_list01_desc {display:block; width:77.9%; margin-left:7%; margin-top:2.5%;}
+/* 0727 추가 */
+#loading {z-index:4; position:absolute; top:35%; left:0; width:100%;}
+/* //0727 추가 */
+
+/* Media query */
+@media all and (max-width:600px) {
+  #pop_setting input[type="checkbox"] + label:after {width:50px; height:31px;}
+}
+
+@media all and (max-width:414px) {
+  #pop_setting input[type="checkbox"] + label:after {width:40px; height:25px;}
+}
+
+@media all and (max-width:310px) {
+  #pop_setting input[type="checkbox"] + label:after {width:30px; height:18px;}
+}
+
+@media all and (max-width:250px) {
+  #pop_setting input[type="checkbox"] + label:after {width:20px; height:12px;}
+}

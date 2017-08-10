@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* Common */
+html {height:100%}
+body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td,
+form, fieldset, legend, input, textarea, button, select {margin:0; padding:0; box-sizing:border-box;}
+body, input, textarea, select, button, table{font-size:16px;}
+body {position:relative; height:100%; font-family:"Nanum Gothic", "HelveticaNeue","HiraKakuProN-W3", sans-serif; color:#fff; -webkit-text-size-adjust:none;}
+img, fieldset {display:block; border:none; width:100%; vertical-align:middle;}
+ul, ol, li {list-style:none;}
+em, address {font-style:normal; word-break:break-all;}
+a {color:#fff; text-decoration:none;}
+a:visited, a:active, a:focus, a:hover {text-decoration:none;}
+table {border-collapse:collapse;}
+input, button, select, textarea {outline:none;}
+button {display:block; width:100%; border:0; cursor:pointer; background:transparent;}
+textarea {resize:none;}
+
+/* HTML5 */
+article, aside, details, figcaption, figure, footer, header, nav, section {display:block;}
+
+.clear {content:''; display:block; clear:both;}
+
+/* Scratch card CSS */
+#wrap {position:relative; width:100%; max-width:640px; height:100%; margin:0 auto;}
+#scratch_div {z-index:10; position:absolute;; top:0; left:0; width:100%;}
+#scratch_div #canvast {position:absolute; left:0; top:0; width:100%;}
+#scratch_div #gameCvs {position:absolute; left:0; top:0; width:100%;}
+
+#scratch_div #bgImg {display:block; position:absolute; left:0; top:0;}
+#scratch_div #endPic {display:none; position:absolute; left:0; top:0;}
