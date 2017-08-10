@@ -67,7 +67,7 @@ function relMouseCoords(event) {
 	} while (currentElement = currentElement.offsetParent);
 	
 	if(event.pageX) {
-		canvasX = event.pageX - totalOffsetX;  // canvasX 순 영역 구하기 : event.pageX(브라우저 좌측에서 마우스 선택된 값) -  totalOffsetX (브라우저 좌측에서부터 canvas 영역까지의 좌표)
+		canvasX = event.pageX - totalOffsetX; 
 		canvasY = event.pageY - totalOffsetY;
 	} else {
 		canvasX = event.changedTouches[0].pageX - totalOffsetX;
@@ -90,7 +90,6 @@ function relMouseCoords(event) {
 };
 
 function ckCvs() {
-	console.log('ckCvs실행');
 	var canvas = document.getElementById('canvast');
 	var hits = 0;
 	var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -100,8 +99,12 @@ function ckCvs() {
 			hits++;
 		};
 	};
+	
+	console.log(hits);
 
 	var pixels = (canvas.width * canvas.height);
+	
+	console.log('pixels :' + pixels);
 
 	if(parseInt((hits / pixels) * 100) > 40) {
 		end();
