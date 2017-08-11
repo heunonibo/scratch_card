@@ -1,10 +1,9 @@
 var context; 
-var ctx;     
+var ctx;   
 var dragImg;
 var brush;
 var erase = false;
 var cvsNm = 'gameCvs';
-
 
 function init() {
 	canvas = document.getElementById('gameCvs');
@@ -16,6 +15,7 @@ function init() {
 };
 
 function onload() {
+	console.log('onload 실행');
 	dragImg = new Image();
 	dragImg.src = './img/scratch/bg_scratch_normal.png';
 
@@ -40,7 +40,7 @@ function moveFn(event) {
 
 	if(erase) {
 		context.save();
-		context.globalCompositeOperation = 'destination-out';  
+		context.globalCompositeOperation = 'destination-out'; 
 		context.drawImage(brush, px - brush.width / 2, py - brush.height / 2); 
 		context.restore();
 
@@ -53,7 +53,7 @@ function moveFn(event) {
 };
 
 function relMouseCoords(event) {
-	var totalOffsetX = 0;
+	var totalOffsetX = 0; 
 	var totalOffsetY = 0; 
 	var canvasX = 0;
 	var canvasY = 0;
@@ -73,7 +73,7 @@ function relMouseCoords(event) {
 		canvasX = event.changedTouches[0].pageX - totalOffsetX;
 		canvasY = event.changedTouches[0].pageY - totalOffsetY;
 	};
-	
+
 	if(event.pageX) {
 		canvasX = ((584 * canvasX) / $('#' + cvsNm).outerWidth()) * ratioW;  
 		canvasY = ((328 * canvasY) / $('#' + cvsNm).outerHeight()) * ratioH;
@@ -86,27 +86,23 @@ function relMouseCoords(event) {
 		x : canvasX,
 		y : canvasY
 	};
-	
 };
 
 function ckCvs() {
+	console.log('ckCvs실행');
 	var canvas = document.getElementById('canvast');
 	var hits = 0;
 	var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-	
+
 	for(var i=0, ii=imageData.data.length; i < ii; i=i+4) {
 		if(!(imageData.data[i] == 0 && imageData.data[i+1] == 0 && imageData.data[i+2] == 0 && imageData.data[i+3] == 0)) {
 			hits++;
 		};
 	};
-	
-	console.log(hits);
 
 	var pixels = (canvas.width * canvas.height);
-	
-	console.log('pixels :' + pixels);
 
-	if(parseInt((hits / pixels) * 100) > 40) {
+	if(parseInt((hits / pixels) * 100) > 10) {
 		end();
 	};
 };
